@@ -9,6 +9,55 @@
 	<title>Tic Tac Toe</title>
 </head>
 <body>
-	<h1>Iniital Test</h1>
+	<div id="header">
+		<div id="tictactoe"><h1>Tic Tac Toe</h1></div>
+        <div id="player1Status" class="playerstatus colorOne">
+            <span id="player1Name" class="playerName playerTurn">Player 1</span>
+            <span class="symbol crosses">X</span>
+        </div>
+		<div id="player2Status"  class="playerstatus colorTwo">
+            <span id="player2Name" class="playerName">Player 2</span>
+            <span class="symbol naughts">O</span>
+            <!--<span class="score">Score:</span>
+            <span id="player2Score" class="playerScore">0</span>-->
+        </div>
+	</div>
+	<div id="gameBoardContainer">
+		<div id="0" class="gameSquareContainer"></div>
+		<div id="1" class="gameSquareContainer"></div>
+		<div id="2" class="gameSquareContainer"></div>
+		<div id="3" class="gameSquareContainer"></div>
+		<div id="4" class="gameSquareContainer"></div>
+		<div id="5" class="gameSquareContainer"></div>
+		<div id="6" class="gameSquareContainer"></div>
+		<div id="7" class="gameSquareContainer"></div>
+		<div id="8" class="gameSquareContainer"></div>
+	</div>
+	<div id="resetBoardContainer">
+        <button id="resetButtonContainer">Reset Board</button>
+    </div>
+	<!-- The Modal Popup getting player names -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tic Tac Toe</h2>
+            <form action="#" method="post" id="myForm">
+                <div id="formFields">
+                    <label for="player1">Player 1 Name:</label>
+                    <input type="text" id="player1" class="playerText" name="player1" required>
+                    <label for="player2">Player 2 Name:</label>
+                    <input type="text" id="player2" class="playerText" name="player2" required>
+                </div>
+            <button type="submit" id="submitBtn" >Add</button></form>
+        </div>
+    </div>
+
+	<!-- Winner -->
+	<div id="winnerMod" class="modal">
+        <div id="winnerModContent">
+            <div id="winnerDIV"></div>
+            <button id="restart" >Replay?</button>
+        </div>
+    </div>
 </body>
 </html>
