@@ -48,5 +48,33 @@ const TicTacToe = (() => {
 			getBoard: getBoard,
 			resetBoard: resetBoard
 		};
-	})
+	})();
+
+	const playerTicTacToe = (name, XorO) => {
+		let score = 0;
+		let characterSymbol = XorO;
+		let playerName = name;
+		let isTurn = false;
+
+		return {
+			getname() {
+				return playerName;
+			},
+			setname(name) {
+				playerName = name;
+			},
+			getcharacterSymbol() {
+				return characterSymbol;
+			},
+			setcharacterSymbol(XorO) {
+				characterSymbol = XorO;
+			},
+			getTurn() {
+				return isTurn;
+			},
+			setTurn(theTurn) {
+				isTurn = theTurn;
+			}
+		}
+	}
 })
