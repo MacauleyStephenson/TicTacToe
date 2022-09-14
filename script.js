@@ -18,5 +18,35 @@ const TicTacToe = (() => {
 				}
 			}
 		}
+		function resetBoard() {
+			board = ["", "", "", "", "", "", "", "", ""];
+			updateBoard();
+		}
+
+		function addToBoard(i) {
+			board[i] = turn;
+			updateBoard();
+		}
+
+		function getBoard() {
+			return board;
+		}
+
+		function getPlayerTurn() {
+			return turn;
+		}
+
+		function setPlayerTurn(theTurn) {
+			turn = theTurn;
+		}
+
+		return {
+			updateBoard: updateBoard,
+			addToBoard: addToBoard,
+			getPlayerTurn: getPlayerTurn,
+			setPlayerTurn: setPlayerTurn,
+			getBoard: getBoard,
+			resetBoard: resetBoard
+		};
 	})
 })
