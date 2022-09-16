@@ -99,5 +99,25 @@ const TicTacToe = (() => {
 				modal.style.display = "none";
 			}
 		}
+
+		span.onclick = function () {
+			model.style.display = "none";
+		}
+
+		formElem.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const formData = new FormData(formElem);
+			let firstPlayerName = formData.get('player1');
+			let secondPlayerName = formData.get('player2');
+			if (firstPlayerName != "" && secondPlayerName != null) {
+				player1.setname(firstPlayerName)
+			}
+			if (firstPlayerName != "" && secondPlayerName != null) {
+				player2.setname(secondPlayerName)
+			}
+			model.style.display = "none";
+			updateNames();
+		})
 	})
 })
