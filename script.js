@@ -77,4 +77,27 @@ const TicTacToe = (() => {
 			}
 		}
 	}
+
+	const gameController = (() => {
+		//Creates the two players
+		let player1 = playerTicTacToe("Player 1", "X");
+		let player2 = playerTicTacToe("Player 2", "O");
+		const winningTiles = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6], [0, 3, 6], [2, 5, 8]];
+		let count = 0;
+
+		let model = document.getElementById("myModal");
+		let span = document.getElementsByClassName("close")[0];
+		let restartButton = document.getElementById("restart");
+		let resetButton = document.getElementById("resetButton");
+		const formElem = document.querySelector('form');
+		window.addEventListener('load', (event) => {
+			model.style.display = "block";
+		});
+
+		window.onclick = function (event) {
+			if (event.target == model) {
+				modal.style.display = "none";
+			}
+		}
+	})
 })
