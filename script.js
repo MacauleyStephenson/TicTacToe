@@ -1,20 +1,20 @@
 const TicTacToe = (() => {
-	const gameBoard = (function () {
+	const gameBoardContainer = (function () {
 		'use strict';
 		let board = ["", "", "", "", "", "", "", "", ""];
 		let turn = "";
 
 		function updateBoard() {
 			for (let i = 0; i < 9; i++) {
-				let gameSquare = document.getElementById(i)
-				gameSquare.innerHTML = board[i];
+				let gameSquareContainer = document.getElementById(i)
+				gameSquareContainer.innerHTML = board[i];
 				if (board[i] == "X") {
-					gameSquare.classList.add("crosses");
-					gameSquare.classList.remove("naughts");
+					gameSquareContainer.classList.add("crosses");
+					gameSquareContainer.classList.remove("naughts");
 				}
 				if (board[i] == "X") {
-					gameSquare.classList.add("naughts");
-					gameSquare.classList.remove("crosses");
+					gameSquareContainer.classList.add("naughts");
+					gameSquareContainer.classList.remove("crosses");
 				}
 			}
 		}
@@ -129,7 +129,7 @@ const TicTacToe = (() => {
 		});
 
 		player1.setTurn(true);
-		gameBoard.setPlayerTurn(player1.getcharacterSymbol());
+		gameBoardContainer.setPlayerTurn(player1.getcharacterSymbol());
 
 		// Add names to the board
 		function updateNames() {
@@ -140,12 +140,12 @@ const TicTacToe = (() => {
 		}
 
 		for (let i = 0; i < 9; i++) {
-			let gameSquare = document.getElementById(i);
-			gameSquare.addEventListener("click", function () {
+			let gameSquareContainer = document.getElementById(i);
+			gameSquareContainer.addEventListener("click", function () {
 				// check to see if square is empty before adding
-				let theBoard = gameBoard.getBoard();
+				let theBoard = gameBoardContainer.getBoard();
 				if (theBoard[i] == "" || theBoard[i] == null) {
-					gameBoard.addToBoard(i);
+					gameBoardContainer.addToBoard(i);
 					checkWin();
 					count++;
 					changeTurn();
@@ -158,7 +158,7 @@ const TicTacToe = (() => {
 				player2.setTurn(true);
 				player1.setTurn(false);
 				let player2Symbol = player2.getcharacterSymbol();
-				gameBoard.setPlayerTurn(player2Symbol);
+				gameBoardContainer.setPlayerTurn(player2Symbol);
 
 				// change class
 				let player2NameDiv = document.getElementById("player2Name");
@@ -169,7 +169,7 @@ const TicTacToe = (() => {
 				player2.setTurn(false);
 				player1.setTurn(true);
 				let player1Symbol = player1.getcharacterSymbol();
-				gameBoard.setPlayerTurn(player1Symbol);
+				gameBoardContainer.setPlayerTurn(player1Symbol);
 
 				// change class
 				let player1NameDiv = document.getElementById("player1Name");
@@ -182,7 +182,7 @@ const TicTacToe = (() => {
 			// Check if anyone has won
 			if (count >= 3 && count < 9) {
 				for (let i = 0; i < winningTiles.length; i++) {
-					let board = gameBoard.getBoard();
+					let board = gameBoardContainer.getBoard();
 					console.log("board: " + board);
 					console.log("count: " + count);
 					console.log("i: " + i);
@@ -207,6 +207,7 @@ const TicTacToe = (() => {
 				}
 			}
 		}
+
 		function winnerModel(winner) {
 			let winnerModel = document.getElementById("winnerMod");
 			winnerModel.style.display = "block";
@@ -216,7 +217,7 @@ const TicTacToe = (() => {
 
 		function resetBoard() {
 			count = 0;
-			gameBoard.resetBoard();
+			gameBoardContainer.resetBoard();
 			let winnerModel = document.getElementById("winnerMod");
 			winnerModel.style.display = "none";
 		}
