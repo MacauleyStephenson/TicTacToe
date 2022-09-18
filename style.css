@@ -142,7 +142,7 @@ button{
 /* ------------ GET NAME MODAL --------------- */
 
 /* The Modal (background) */
-.modal {
+.model {
     display: none;
     position: fixed;
     z-index: 1;
@@ -154,7 +154,7 @@ button{
   }
 
   /* Modal Content/Box */
-  .modal-content {
+  .model-content {
     background-color: var(--main-color);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
