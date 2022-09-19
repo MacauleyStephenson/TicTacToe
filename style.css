@@ -27,7 +27,7 @@ body{
     align-items: center;
 }
 
-#gameSquareContainer{
+.gameSquareContainer{
 	display: flex;
     border: 1px solid var(--secondary-color);
     align-items: center;
@@ -123,7 +123,7 @@ h2{
     text-align: center;
 }
 
-#resetButtonContainer{
+#resetButton{
     margin-top: 2rem;
 
 }
@@ -139,9 +139,9 @@ button{
 }
 
 
-/* ------------ GET NAME MODAL --------------- */
+/* ------------ GET NAME MODEL --------------- */
 
-/* The Modal (background) */
+/* The Model (background) */
 .model {
     display: none;
     position: fixed;
@@ -153,7 +153,7 @@ button{
     overflow: auto;
   }
 
-  /* Modal Content/Box */
+  /* Model Content/Box */
   .model-content {
     background-color: var(--main-color);
     margin: 15% auto; /* 15% from the top and centered */
@@ -202,7 +202,7 @@ button{
       justify-content: center;
   }
 
-  /* ------------ WINNER MODAL --------------- */
+  /* ------------ WINNER MODEL --------------- */
 #winnerModContent {
     background-color: var(--main-color);
     font-size: 3rem;

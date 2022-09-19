@@ -1,4 +1,5 @@
 const TicTacToe = (() => {
+
 	const gameBoardContainer = (function () {
 		'use strict';
 		let board = ["", "", "", "", "", "", "", "", ""];
